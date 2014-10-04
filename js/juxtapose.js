@@ -240,6 +240,23 @@
 			this.rightImage.appendChild(rightDate);
 		},
 
+		displayVideo: function() {
+			video = document.createElement("video");
+			var autoplay = document.createAttribute("autoplay");
+			video.setAttributeNode(autoplay);
+
+			var source = document.createElement("source");
+			video.appendChild(source)
+			var src = document.createAttribute("src");
+			src.value = "media_samples/Beispiel_U-Bahn.mp4";
+			source.setAttributeNode(src);
+			var type = document.createAttribute("type");
+			type.value = "video/mp4";
+			source.setAttributeNode(type);
+
+			this.leftImage.appendChild(video);
+		},
+
 		displayCredits: function() {
 			credit = document.createElement("div");
 			credit.className = "jx-credit";
@@ -352,7 +369,7 @@
 
 			this.updateSlider(this.options.startingPosition, false);
 
-			setImage(this.leftImage, this.imgBefore.image.src);
+			// setImage(this.leftImage, this.imgBefore.image.src);
 			setImage(this.rightImage, this.imgAfter.image.src);
 
 			if (this.options.showLabels === true) {
@@ -362,6 +379,8 @@
 			if (this.options.showCredits === true) {
 				this.displayCredits();
 			}
+			
+			this.displayVideo()
 
 			var self = this;
 			window.addEventListener("resize", function() {
