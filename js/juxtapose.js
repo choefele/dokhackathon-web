@@ -8,6 +8,7 @@
 	function Graphic(properties) {
 		this.image = new Image();
 		this.image.src = properties.src;
+		this.srcVideo = properties.srcVideo;
 		this.label = properties.label || false;
 		this.credit = properties.credit || false;
 	}
@@ -83,6 +84,25 @@
 		var property = "url(" + url + ")";
 		element.style.backgroundImage = property;
 	}
+
+	function setVideo(element, url) {
+		var video = document.createElement("video");
+		var autoplay = document.createAttribute("autoplay");
+		video.setAttributeNode(autoplay);
+		var loop = document.createAttribute("loop");
+		video.setAttributeNode(loop);
+
+		var source = document.createElement("source");
+		video.appendChild(source)
+		var src = document.createAttribute("src");
+		src.value = url;
+		source.setAttributeNode(src);
+		var type = document.createAttribute("type");
+		type.value = "video/mp4";
+		source.setAttributeNode(type);
+
+		element.appendChild(video);
+	}		
 
 	function getImageDimensions(img) {
 		var dimensions = {
@@ -240,23 +260,6 @@
 			this.rightImage.appendChild(rightDate);
 		},
 
-		displayVideo: function() {
-			video = document.createElement("video");
-			var autoplay = document.createAttribute("autoplay");
-			video.setAttributeNode(autoplay);
-
-			var source = document.createElement("source");
-			video.appendChild(source)
-			var src = document.createAttribute("src");
-			src.value = "media_samples/Beispiel_U-Bahn.mp4";
-			source.setAttributeNode(src);
-			var type = document.createAttribute("type");
-			type.value = "video/mp4";
-			source.setAttributeNode(type);
-
-			this.leftImage.appendChild(video);
-		},
-
 		displayCredits: function() {
 			credit = document.createElement("div");
 			credit.className = "jx-credit";
@@ -370,6 +373,7 @@
 			this.updateSlider(this.options.startingPosition, false);
 
 			// setImage(this.leftImage, this.imgBefore.image.src);
+			setVideo(this.leftImage, this.imgBefore.srcVideo)
 			setImage(this.rightImage, this.imgAfter.image.src);
 
 			if (this.options.showLabels === true) {
@@ -380,8 +384,6 @@
 				this.displayCredits();
 			}
 			
-			this.displayVideo()
-
 			var self = this;
 			window.addEventListener("resize", function() {
 				self.setWrapperDimensions();
@@ -453,6 +455,7 @@
 			[
 				{
 					src: images[0].src,
+					srcVideo: images[0].getAttribute('data-video'),
 					label: images[0].getAttribute('data-label'),
 					credit: images[0].getAttribute('data-credit')
 				},
