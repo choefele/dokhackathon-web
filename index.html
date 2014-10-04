@@ -76,7 +76,16 @@
         </div>
         <!-- /.row -->
     </div>
-    <!-- /.container -->	
+    <!-- /.container -->
+	
+	<audio id="interview" src="media_samples/zweifreundetchius.wav" preload="auto"></audio>
+	<a href="javascript:play_single_sound();">Interview</a>
+	<script type="text/javascript">
+		function play_single_sound() {
+			var interview = document.getElementById('interview');
+			interview.play()
+		}
+	</script>
 
     <script src="js/jquery-1.11.0.js"></script>
     <script src="js/bootstrap.min.js"></script>
