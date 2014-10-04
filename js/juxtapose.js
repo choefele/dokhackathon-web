@@ -334,7 +334,7 @@
 				this.slider.appendChild(this.handle);
 				this.slider.appendChild(this.leftImage);
 				this.slider.appendChild(this.rightImage);
-				this.slider.appendChild(this.labCredit);
+				// this.slider.appendChild(this.labCredit);
 
 				this.leftArrow = document.createElement("div");
 				this.rightArrow = document.createElement("div");
