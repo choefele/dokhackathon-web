@@ -87,6 +87,7 @@
 
 	function setVideo(element, url, height) {
 		var video = document.createElement("video");
+		video.id = "jx-video"
 		video.height = height
 		video.autoplay = true
 		video.loop = true

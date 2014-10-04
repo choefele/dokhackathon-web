@@ -85,6 +85,19 @@
 			var interview = document.getElementById('interview');
 			interview.play()
 		}
+		
+		function checkDOMChange() {
+			var video = document.getElementById('jx-video');
+			if (video != null) {
+				video.addEventListener('loadeddata', function() {
+			   	 console.log("loaded")
+				}, false);
+			}
+
+		    // call the function again after 100 milliseconds
+		    setTimeout(checkDOMChange, 100);
+		}
+		checkDOMChange()
 	</script>
 
     <script src="js/jquery-1.11.0.js"></script>
