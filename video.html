@@ -76,6 +76,11 @@
 	
 	<audio id="interview" src="media_samples/zweifreundetchius.wav" preload="auto"></audio>
 	<a href="javascript:play_single_sound();">Interview</a>
+
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/juxtapose.js"></script>
+	
 	<script type="text/javascript">
 		function play_single_sound() {
 			var interview = document.getElementById('interview');
@@ -86,19 +91,30 @@
 			var video = document.getElementById('jx-video');
 			if (video != null) {
 				video.addEventListener('loadeddata', function() {
-			   	 console.log("loaded")
+			   	 console.log("loaded");
 				}, false);
 			}
 
 		    // call the function again after 100 milliseconds
 		    setTimeout(checkDOMChange, 100);
 		}
-		checkDOMChange()
+		
+		$(document).ready(function () {
+			console.log("ready");
+		});
+		
+		$(window).load(function () {
+			console.log("load");
+			
+			var video = document.getElementById('jx-video');
+			console.log("" + video);
+			if (video != null) {
+				video.addEventListener('loadeddata', function() {
+			   	 console.log("loaded");
+				}, false);
+			}
+		});
 	</script>
-
-    <script src="js/jquery-1.11.0.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-	<script src="js/juxtapose.js"></script>
 
 </body>
 
