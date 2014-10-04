@@ -85,8 +85,9 @@
 		element.style.backgroundImage = property;
 	}
 
-	function setVideo(element, url) {
+	function setVideo(element, url, height) {
 		var video = document.createElement("video");
+		video.height = height
 		video.autoplay = true
 		video.loop = true
 		video.src = url
@@ -363,7 +364,8 @@
 			this.updateSlider(this.options.startingPosition, false);
 
 			// setImage(this.leftImage, this.imgBefore.image.src);
-			setVideo(this.leftImage, this.imgBefore.srcVideo)
+			var height = (parseInt(getComputedStyle(this.wrapper)['height'], 10))
+			setVideo(this.leftImage, this.imgBefore.srcVideo, height)
 			setImage(this.rightImage, this.imgAfter.image.src);
 
 			if (this.options.showLabels === true) {
