@@ -87,19 +87,9 @@
 
 	function setVideo(element, url) {
 		var video = document.createElement("video");
-		var autoplay = document.createAttribute("autoplay");
-		video.setAttributeNode(autoplay);
-		var loop = document.createAttribute("loop");
-		video.setAttributeNode(loop);
-
-		var source = document.createElement("source");
-		video.appendChild(source)
-		var src = document.createAttribute("src");
-		src.value = url;
-		source.setAttributeNode(src);
-		var type = document.createAttribute("type");
-		type.value = "video/mp4";
-		source.setAttributeNode(type);
+		video.autoplay = true
+		video.loop = true
+		video.src = url
 
 		element.appendChild(video);
 	}		
