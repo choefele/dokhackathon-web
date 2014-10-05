@@ -8,7 +8,6 @@
 	function Graphic(properties) {
 		this.image = new Image();
 		this.image.src = properties.src;
-		this.srcVideo = properties.srcVideo;
 		this.label = properties.label || false;
 		this.credit = properties.credit || false;
 	}
@@ -84,17 +83,6 @@
 		var property = "url(" + url + ")";
 		element.style.backgroundImage = property;
 	}
-
-	function setVideo(element, url, height) {
-		var video = document.createElement("video");
-		video.id = "jx-video"
-		video.height = height
-		video.autoplay = true
-		video.loop = true
-		video.src = url
-
-		element.appendChild(video);
-	}		
 
 	function getImageDimensions(img) {
 		var dimensions = {
@@ -335,7 +323,7 @@
 				this.slider.appendChild(this.handle);
 				this.slider.appendChild(this.leftImage);
 				this.slider.appendChild(this.rightImage);
-				// this.slider.appendChild(this.labCredit);
+				this.slider.appendChild(this.labCredit);
 
 				this.leftArrow = document.createElement("div");
 				this.rightArrow = document.createElement("div");
@@ -364,9 +352,7 @@
 
 			this.updateSlider(this.options.startingPosition, false);
 
-			// setImage(this.leftImage, this.imgBefore.image.src);
-			var height = (parseInt(getComputedStyle(this.wrapper)['height'], 10))
-			setVideo(this.leftImage, this.imgBefore.srcVideo, height)
+			setImage(this.leftImage, this.imgBefore.image.src);
 			setImage(this.rightImage, this.imgAfter.image.src);
 
 			if (this.options.showLabels === true) {
@@ -376,7 +362,7 @@
 			if (this.options.showCredits === true) {
 				this.displayCredits();
 			}
-			
+
 			var self = this;
 			window.addEventListener("resize", function() {
 				self.setWrapperDimensions();
@@ -448,7 +434,6 @@
 			[
 				{
 					src: images[0].src,
-					srcVideo: images[0].getAttribute('data-video'),
 					label: images[0].getAttribute('data-label'),
 					credit: images[0].getAttribute('data-credit')
 				},
