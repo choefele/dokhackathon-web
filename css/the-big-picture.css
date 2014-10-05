@@ -7,6 +7,10 @@ html {
 	background-color: black;
 }
 
+.img-centered {
+    margin: 0 auto;
+}
+
 body {
 	margin-bottom: 50px;
 	background: none;

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Make sure the <html> tag is set to the .full CSS class. Change the background image in the full.css file. -->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Umsteigen</title>
+
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/the-big-picture.css" rel="stylesheet">
+	<link href="../../css/juxtapose.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Page Content -->
+    <div class="container-fluid">
+        <div class="row" id="video-container">
+				<div class="juxtapose">
+					<img class="left" src="http://placehold.it/1x1" data-video="zettel_nacht.mp4" />
+					<img class="right" src="http://placehold.it/1x1" data-video="zettel_tag.mp4"/>
+				</div>
+        </div>
+    </div>
+	
+    <script src="../../js/jquery-1.11.0.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+	<script src="../../js/juxtapose_vv.js"></script>
+	
+	<script type="text/javascript">
+		$(window).load(function () {
+			var documentWidth = $(document).width();
+			$('video').width(documentWidth);
+			var height = $('video').height()
+			height *= 1.121
+			$('div.jx-handle').height(height)
+		});
+		$(window).resize(function (){
+			var documentWidth = $(document).width();
+			$('video').width(documentWidth);
+			$('div.jx-handle').height($('video').height())
+		})
+	</script>
+
+</body>
+
+</html>
