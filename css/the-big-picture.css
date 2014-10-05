@@ -3,11 +3,19 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+html {
+	background-color: black;
+}
 
 body {
 	margin-bottom: 50px;
 	background: none;
     font-family: Economica,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.navbar-inverse {
+	background-color:rgba(0,0,0,0);
+	border-color:rgba(0,0,0,0);
 }
 
 .extra-margin {
@@ -35,11 +43,10 @@ a:active {
 }
 
 .full {
-  	background: url(../Titelsequenz-Anim-141004-2120.gif) no-repeat center center fixed; 
-  	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
+  	-webkit-background-size: 100px;
+  	-moz-background-size: 100px;
+  	-o-background-size: 100px;
+  	background-size: 100px;
 }
 
 h1 {
