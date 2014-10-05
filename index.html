@@ -71,7 +71,7 @@
     </div>
     <!-- /.container -->
 	
-	<audio id="audio" src="ton intro.mp3" preload="auto"></audio>
+	<audio id="audio" src="ton intro.mp3" preload="auto" loop></audio>
 	
     <script src="../../js/jquery-1.11.0.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
@@ -82,8 +82,8 @@
 
 		$(window).load(function () {
 			
-				var audio = document.getElementById('audio');
-				audio.play()
+			var audio = document.getElementById('audio');
+			audio.play()
 			
 			$("#interview0").hover(
 			  function() {
