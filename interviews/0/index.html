@@ -45,10 +45,14 @@
 		$(window).load(function () {
 			var documentWidth = $(document).width();
 			$('video').width(documentWidth);
+			var height = $('video').height()
+			height *= 1.121
+			$('div.jx-handle').height(height)
 		});
 		$(window).resize(function (){
 			var documentWidth = $(document).width();
 			$('video').width(documentWidth);
+			$('div.jx-handle').height($('video').height())
 		})
 	</script>
 
