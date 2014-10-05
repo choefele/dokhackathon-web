@@ -7,10 +7,31 @@
 body {
 	margin-bottom: 50px;
 	background: none;
+    font-family: Economica,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .extra-margin {
-	margin-top: 50px;
+	margin-top: 80px;
+}
+
+.extra-marging-right {
+	margin-right: 120px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
 }
 
 .full {
@@ -19,6 +40,28 @@ body {
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
+}
+
+h1 {
+	color: white;
+	text-align: center;	
+	font-size: 4em;
+	font-weight: 700;
+}
+
+h2 {
+	color: white;
+	text-align: center;
+	display: none;
+}
+
+h2:hover {
+	color: white;
+	text-decoration: none;
+}
+
+.transparent {
+    opacity: 0.85;
 }
 
 .jx-image.right {

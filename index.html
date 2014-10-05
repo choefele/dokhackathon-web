@@ -14,6 +14,7 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/the-big-picture.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Economica:400,700' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -57,32 +58,71 @@
         </div>
         <!-- /.container -->
     </nav>
+	
+	<!-- Header -->
+	<header>
+		<div class="container">
+			<h1 class="intro-heading">Warschauer Straße</h1>
+	    </div>
+	</header>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container extra-margin">
 		<div class="row">
             <div class="col-sm-4">
-				<a href="interviews/0/">
-                	<img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
-                	<h2>Marketing Box #1</h2>
+				<a id="interview0" href="interviews/0/">
+					<img class="img-responsive img-center transparent" src="mann.png" alt="">
+					<h2 id="title0">Denis</h2>
 				</a>
             </div>
             <div class="col-sm-4">
-				<a href="interviews/1/">
-					<img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
-					<h2>Marketing Box #2</h2>
+				<a id="interview1" href="interviews/1/">
+                	<img class="img-responsive img-center transparent" src="paar.png" alt="">
+                	<h2 id="title1">Helga und Heinz</h2>
 				</a>
             </div>
             <div class="col-sm-4">
-				<a href="interviews/2/">
-					<img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
-					<h2>Marketing Box #3</h2>
+				<a id="interview2" href="interviews/2/">
+                	<img class="img-responsive img-center transparent" src="frau.png" alt="">
+                	<h2 id="title2">Ilayda</h2>
 				</a>
             </div>
         </div>
         <!-- /.row -->
     </div>
     <!-- /.container -->
+	
+    <script src="../../js/jquery-1.11.0.js"></script>
+	
+	<script type="text/javascript">
+		$(window).load(function () {
+			$("#interview0").hover(
+			  function() {
+				  $("#title0").fadeIn(200);
+			  }, function() {
+				  $("#title0").fadeOut(200);
+			  }
+			);
+
+			$("#interview1").hover(
+			  function() {
+				  $("#title1").fadeIn(200);
+			  }, function() {
+				  $("#title1").fadeOut(200);
+			  }
+			);
+
+			$("#interview2").hover(
+			  function() {
+				  $("#title2").fadeIn(200);
+			  }, function() {
+				  $("#title2").fadeOut(200);
+			  }
+			);
+		});
+		
+	</script>
+	
 
 </body>
 
