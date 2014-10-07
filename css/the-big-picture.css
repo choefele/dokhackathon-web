@@ -85,3 +85,14 @@ h2:hover {
 video {
 	width: 500px
 }
+
+p.large {
+	color: rgb(210,210, 210);
+	font-size: 1.3em;	
+}
+
+p.large-a {
+	color: rgb(210,210, 210);
+	font-size: 1.3em;	
+	font-weight: 700;
+}
