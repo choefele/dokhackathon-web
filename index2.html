@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html class="full" lang="en">
+<!-- Make sure the <html> tag is set to the .full CSS class. Change the background image in the full.css file. -->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Übergänge</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/the-big-picture.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Economica:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body class="extra-margin">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Édith, Mirko, Kilian &amp; Claus</a>
+            </div>
+        </div>
+        <!-- /.container -->
+    </nav>
+	
+	<!-- Header -->
+	<header>
+		<div class="container">
+			<h1 class="intro-heading">Übergänge</h1>
+	    </div>
+	</header>
+
+    <!-- Page Content -->
+    <div class="container extra-margin">
+		<div class="row">
+            <div class="col-sm-4">
+				<a id="interview0">
+					<img class="img-responsive img-center transparent" src="mann.png" alt="">
+					<h2 id="title0">Denis (51)</h2>
+				</a>
+            </div>
+            <div class="col-sm-4">
+				<a id="interview1">
+                	<img class="img-responsive img-center transparent" src="paar.png" alt="">
+                	<h2 id="title1">Heinz (83) und Helga (84)</h2>
+				</a>
+            </div>
+            <div class="col-sm-4">
+				<a id="interview2" href="interviews/2/index.html">
+                	<img class="img-responsive img-center transparent" src="frau.png" alt="">
+                	<h2 id="title2">Ilayda (21)</h2>
+				</a>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+	
+	<audio id="audio" src="intro ambiance 2.mp3" preload="auto" loop></audio>
+	
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	
+	<script type="text/javascript">
+	var index = Math.floor(Math.random() * 2)
+	$("html").css("background", "url(background" + index + ".gif) no-repeat");
+
+		$(window).load(function () {
+			
+			var audio = document.getElementById('audio');
+			audio.play()
+			
+			$("#interview0").hover(
+			  function() {
+				  $("#title0").fadeIn(200);
+			  }, function() {
+				  $("#title0").fadeOut(200);
+			  }
+			);
+
+			$("#interview1").hover(
+			  function() {
+				  $("#title1").fadeIn(200);
+			  }, function() {
+				  $("#title1").fadeOut(200);
+			  }
+			);
+
+			$("#interview2").hover(
+			  function() {
+				  $("#title2").fadeIn(200);
+			  }, function() {
+				  $("#title2").fadeOut(200);
+			  }
+			);
+		});
+		
+	</script>
+	
+
+</body>
+
+</html>
