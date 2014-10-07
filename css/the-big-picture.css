@@ -75,7 +75,8 @@ h2:hover {
     opacity: 0.85;
 }
 
-.jx-image.right {
+#jx-video-left {
+	float: left;
 }
 
 #jx-video-right {
